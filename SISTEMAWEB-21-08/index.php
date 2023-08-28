@@ -49,7 +49,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Origem:</label>
-                        <select name="cboOrigem" id="cboOrigem"  id="txtOrigem"  class="form-select" aria-label="Default select example">
+                        <select name="txtOrigem" id="txtOrigem"  class="form-select" aria-label="Default select example">
                             <option selected>Celular</option>
                             <option value="Fixo">Fixo</option>
                             <option value="Whatsapp">Whatsapp</option>

@@ -3,7 +3,6 @@ define('SERVIDOR', 'localhost');
 define('USUARIO', 'root');
 define('SENHA', '');
 define('BANCO', 'projetoweb');
-
 class Conexao{
     protected $mysqli;
     public function __construct(){
@@ -16,8 +15,11 @@ class Conexao{
     public function setAgedamentos($nome, $telefone, $origem, $data_contato, $observacao){
         $stmt = $this->mysqli->prepare("INSERT INTO agendamentos('nome','telefone','origem','data_contato','observacao') VALUES(?,?,?,?,?)");
         $stmt->bind_param("sssss",$nome,$telefone,$origem,$data_contato,$observacao);
-        $stmt->execute();
+        if($stmt->execute() == TRUE){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
-
 ?>
